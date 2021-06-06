@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<script>
+
+</script>
+<body>
+
+<div class="sidenav">
+        <div id="log">
+        <i><p id="fonta">Shade<b>AR</b></p></i>
+    </div>
+    <div id="specs" class="side"><img src="{{url_for('static', filename='images/reading-eyeglasses (2).png')}}" id="specid"> <a href="{{url_for('index')}}"><b><p id="description">Spectacles</p></b></a> </div>
+    <div id="Watches" class="side"> <img src="{{url_for('static', filename='images/clock (1).png')}}" id="watchid"><a href="{{url_for('watches')}}"><p id="description">Watches</p>  </a>  </div>
+    
+
+
+</div>
+
+<div class="main">
+
+    <div id="imgcontainer">
+
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 1', val='201' ) }}';">
+            <div id="imgholder1">
+                <img src="{{url_for('static', filename='images/g1.png')}}" id="watchtemp" >
+                <div id="sampleholder">
+                    <p id="samplestyle">Sample Spectacles One</p>
+                </div>
+            </div>
+     
+            <div id="textholder1">
+                 <p id="one">Virtual Try On</p>
+                 
+         </div>
+        </div>
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 2' ,val='202') }}';" >
+            <div id="imgholder1">
+                <img src="{{url_for('static', filename='images/g2.png')}}" id="watchtemp2" >
+            
+            
+                <div id="sampleholder">
+                    <p id="samplestyle">Sample Spectacles Two</p>
+                </div>
+            
+            </div>
+            <div id="textholder1">
+                 <p id="one">VIrtual Try On</p>
+                 
+         </div>
+        </div>
+
+        </div>
+    </div>
+  
+</body>
+</html>

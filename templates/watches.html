@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <title>Document</title>
+</head>
+<body>
+<div class="sidenav">
+    <div id="specs" class="side"><img src="{{url_for('static', filename='images/glasslogo.png')}}"><a href="{{url_for('index')}}"><p id="description">Spectacles</p></a> </div>
+    <div id="Watches" class="side"><img src="{{url_for('static', filename='images/watches.png')}}" id="watchid"><b><a href="{{url_for('watches')}}"><p id="description">Watches</p></a></b>  </div>
+    
+
+
+</div>
+<div class="main">
+   <p id="heading"> Watches</p>
+    <div id="imgcontainer">
+
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample watch 1', val='301' ) }}';">
+            <div id="imgholder1">
+                <img src="{{url_for('static', filename='images/w11.png')}}" id="wtemp" >
+            </div>
+            <div id="textholder1">
+                 <p id="one">Sample watch one</p>
+                 
+         </div>
+        </div>
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample watch 2', val='302' ) }}';">
+            <div id="imgholder1">
+                <img src="{{url_for('static', filename='images/w22.png')}}" id="wtemp2" >
+            </div>
+            <div id="textholder1">
+                 <p id="one">Sample watch Two</p>
+                 
+         </div>
+        </div>
+       
+    </div>
+    
+  
+</body>
+</html>

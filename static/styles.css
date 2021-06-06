@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    justify-content: center;
+   
+    
+}
+#totalframe{
+   
+    width: 600px;
+    height: 600px;
+    margin-top: 80px;
+}
+#firstframe{
+
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logos{
+    padding-top: 6px;
+ 
+    width: 140px;
+    height: 55px;
+}
+#specs{
+    margin: 0px;
+    font-weight:500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+#shade{
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+    margin: 0px;
+}
+#takesnap{
+
+    width: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#pink{
+    border: 3px solid #DF20CC;
+    background-color: transparent;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:500;
+    color: #DF20CC;
+}
+#face{
+    width: 600px;
+    border: 1px solid #D1CACA;
+}
+#lastframe{
+    width: 600px;
+
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#avail{
+
+   
+}
+#colors{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+#color1{
+    background-color: #6A6961;
+    height: 30px;
+    width: 30px;
+    margin-right: 9px;
+}
+#color2{
+    background-color: #ADA661;
+    height: 30px;
+    width: 30px;
+}

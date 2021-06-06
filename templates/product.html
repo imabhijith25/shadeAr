@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;700&display=swap" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>View Product</title>
+
+    <script src="{{url_for('static', filename='home.js')}}"></script>
+</head>
+<body>
+
+
+
+
+    <div id="totalframe">
+        <div id="close" onclick="window.location.href='{{ url_for( 'index') }}';">                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L6.75 17.25"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75L17.25 17.25"/>
+          </svg></div>
+        <div id="firstframe">
+     
+            <div id="logos">
+
+               <i> <p id="shade"> Shade<b>AR</b></p></i>
+                <p id="specs">Spectacles TryOut</p>
+
+            </div>
+            <!-- <div id="takesnap">
+                    <button id="pink" download>
+                            Take a Snapshot
+                    </button>
+            </div> -->
+
+        </div>
+        <div id="image">
+          
+            {%if item=="watch"%}
+        
+                <img id="bg" src="{{ url_for('spec_video_feed',id=identifier) }}">
+        
+        
+            {%else%}
+            <img id="bg" src="{{ url_for('watch_video_feed') }}">
+            {%endif%}
+        </div>
+        <div id="lastframe">
+
+            <div id="sample">
+                <p id="specs"> Sample Spectacles 1</p>
+                <img src="{{url_for('static', filename='images/readglass.png')}}">
+
+            </div>
+            <div id="avail">
+                <p id="specs">Available Colors</p>
+                <div id="colors">
+                    <div id="color1">
+
+                    </div>
+                    <div id="color2"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="main">
+    <p id="heading"> Spectacles > {{prod}}</p>
+    {%if item=="watch"%}
+
+        <img id="bg" src="{{ url_for('spec_video_feed',id=identifier) }}">
+
+
+    {%else%}
+    <img id="bg" src="{{ url_for('watch_video_feed') }}">
+    {%endif%}
+    </div>
+    
+   -->
+</body>
+</html>
