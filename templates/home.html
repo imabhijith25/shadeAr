@@ -32,7 +32,7 @@
 
     <div id="imgcontainer">
 
-        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 1', val='201' ) }}';">
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 1', val='201',color='black' ) }}';">
             <div id="imgholder1">
                 <img src="{{url_for('static', filename='images/g1.png')}}" id="watchtemp" >
                 <div id="sampleholder">
@@ -45,7 +45,7 @@
                  
          </div>
         </div>
-        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 2' ,val='202') }}';" >
+        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 2' ,val='202',color='black') }}';" >
             <div id="imgholder1">
                 <img src="{{url_for('static', filename='images/g2.png')}}" id="watchtemp2" >
             

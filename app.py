@@ -5,14 +5,20 @@ import os
 camera = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
-def gen_frames_watch():  #watch cam
-    img1 = cv2.imread('pattern.jpg') #mianitem
+def gen_frames_watch(id):  #watch cam
+    img1 = cv2.imread('circle.png') #mianitem
     win_name = 'Camera Matching'
     MIN_MATCH = 10
-    images = glob.glob('*.JPG')
+    types = ['*.png','*.jpg']
+    images = glob.glob("*.png") + glob.glob("*.jpg")
     print(images)
     currentImage=0  
-    replaceImg=cv2.imread(images[1])
+    if (id=="302"):
+        replaceImg=cv2.imread(images[1])
+    else:
+        replaceImg =cv2.imread(images[2])
+
+    
     rows,cols,ch = replaceImg.shape
     pts1 = np.float32([[0, 0],[0,rows],[(cols),(rows)],[cols,0]])
     zoomLevel = 0   
@@ -96,13 +102,18 @@ def transparentOverlay(src, overlay, pos=(0, 0), scale=1):
     return src
 
      
-def gen_frames(ide):  # generate frame by frame from camera
-    if (ide==1):
-        specs_ori = cv2.imread('static/images/colorednewglass2.png', -1)
+def gen_frames(ide,color):  # generate frame by frame from camera
+    if (ide==1 and color=="black"):
+        specs_ori = cv2.imread('static/images/newglass2.png', -1)
     #change this portion abhiii
-    else:
-        specs_ori = cv2.imread('static/images/newglass1.png', -1)
+    elif(ide==1 and color=="yellow"):
+        specs_ori = cv2.imread('static/images/colorednewglass2.png', -1)
 
+    elif(ide==2 and color=="black"):
+        specs_ori = cv2.imread('static/images/newglass1.png', -1)
+    elif(ide==2 and color=="yellow"):
+        specs_ori = cv2.imread('static/images/colorednewglass1.png', -1)
+#C:\Users\dhoni\augmentedsys\static\images\colorednewglass1.png
 
     while True:
     
@@ -143,21 +154,29 @@ def watches():
 def product():
     val = request.args['id']
     iden  = request.args['val'] #Identifier
-    if(iden[0]=="2"):
-        return render_template("product.html",prod=val,item="watch",identifier=iden)
-    else:
-        return render_template("product.html",prod=val,item="watch2w")
+    color = request.args['color']
+    return render_template("product.html",prod=val,item="specs",identifier=iden,color=color)
+    
+
+@app.route("/productwatch", methods=['GET'])
+def productwatch():
+    val = request.args['id']
+    iden  = request.args['val'] #Identifier
+    return render_template("prodwatch.html",prod=iden,item="watch2w")
 
 @app.route('/video_feed', methods=['GET'])
 def spec_video_feed():
     val  = request.args['id']
+    color = request.args['color']
     if(val == "201"):
-        return Response(gen_frames(1), mimetype='multipart/x-mixed-replace; boundary=frame')
+        return Response(gen_frames(1,color), mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
-        return Response(gen_frames(2), mimetype='multipart/x-mixed-replace; boundary=frame')
-@app.route("/watch_feed")
+        return Response(gen_frames(2,color), mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.route("/watch_feed",methods=["GET"])
 def watch_video_feed():
-    return Response(gen_frames_watch(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    id = request.args['id']
+    print(id)
+    return Response(gen_frames_watch(id), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == "__main__":

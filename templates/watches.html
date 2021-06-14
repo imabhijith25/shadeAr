@@ -8,35 +8,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 <div class="sidenav">
-    <div id="specs" class="side"><img src="{{url_for('static', filename='images/glasslogo.png')}}"><a href="{{url_for('index')}}"><p id="description">Spectacles</p></a> </div>
-    <div id="Watches" class="side"><img src="{{url_for('static', filename='images/watches.png')}}" id="watchid"><b><a href="{{url_for('watches')}}"><p id="description">Watches</p></a></b>  </div>
-    
-
+    <div id="log">
+        <i><p id="fonta">Shade<b>AR</b></p></i>
+    </div>
+    <div id="specs1" class="side"><img src="{{url_for('static', filename='images/reading-eyeglasses (2).png')}}" id="specid"> <a href="{{url_for('index')}}"><p id="description">Spectacles</p></a> </div>
+    <div id="specsil" class="side"> <img src="{{url_for('static', filename='images/clock (1).png')}}" id="watchid"><a href="{{url_for('watches')}}"><b><p id="description">Watches</p></b>  </a>  </div>
 
 </div>
 <div class="main">
-   <p id="heading"> Watches</p>
+   
     <div id="imgcontainer">
 
-        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample watch 1', val='301' ) }}';">
+        <div id="img1" onclick="window.location.href='{{ url_for( 'productwatch' , id='Sample watch 1', val='301' ) }}';">
             <div id="imgholder1">
-                <img src="{{url_for('static', filename='images/w11.png')}}" id="wtemp" >
+                <img src="{{url_for('static', filename='images/301.png')}}" id="wtemp" >
+
             </div>
             <div id="textholder1">
-                 <p id="one">Sample watch one</p>
+                 <p id="one">Virtual Try On</p>
                  
          </div>
         </div>
-        <div id="img1" onclick="window.location.href='{{ url_for( 'product' , id='Sample watch 2', val='302' ) }}';">
+        <div id="img1" onclick="window.location.href='{{ url_for( 'productwatch' , id='Sample watch 2', val='302' ) }}';">
             <div id="imgholder1">
-                <img src="{{url_for('static', filename='images/w22.png')}}" id="wtemp2" >
+                <img src="{{url_for('static', filename='images/302.png')}}" id="wtemp2" >
             </div>
             <div id="textholder1">
-                 <p id="one">Sample watch Two</p>
+                 <p id="one">Virtual Try On</p>
                  
          </div>
         </div>

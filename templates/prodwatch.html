@@ -21,7 +21,7 @@
 
 
     <div id="totalframe">
-        <div id="close" onclick="window.location.href='{{ url_for( 'index') }}';">                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <div id="close" onclick="window.location.href='{{ url_for( 'watches') }}';">                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L6.75 17.25"/>
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75L17.25 17.25"/>
           </svg></div>
@@ -30,7 +30,7 @@
             <div id="logos">
 
                <i> <p id="shade"> Shade<b>AR</b></p></i>
-                <p id="specs">Spectacles TryOut</p>
+                <p id="specs">Watch TryOut</p>
 
             </div>
             <!-- <div id="takesnap">
@@ -42,27 +42,37 @@
         </div>
         <div id="image">
           
-            {%if item=="specs"%}
-        
-                <img id="bg" src="{{ url_for('spec_video_feed',id=identifier,color=color) }}">
+           
         
         
-            {%else%}
-            <img id="bg" src="{{ url_for('watch_video_feed') }}">
-            {%endif%}
+  
+            <img id="bg" src="{{ url_for('watch_video_feed',id=prod) }}">
+
         </div>
         <div id="lastframe">
 
             <div id="sample">
-                <p id="specs"> Sample Spectacles </p>
-                <img src="{{url_for('static', filename='images/readglass.png')}}">
+                <!---Use if else here-->
+    
+                {% if prod== "301" %}
+                <p id="specs"> Sample Watch One </p><br>
+                <img src="{{url_for('static', filename='images/hor1.png')}}">
+                {%elif prod=="302" %}
+                <p id="specs"> Sample Watch Two</p><br>
+                <img src="{{url_for('static', filename='images/hor2.png')}}">
+                {%endif%}
 
             </div>
             <div id="avail">
-                <p id="specs">Available Colors</p>
+                <p id="specs">Download This Marker</p>
                 <div id="colors">
-   
-                    <div id="color2"  onclick="window.location.href='{{ url_for( 'product' , id='Sample Spectacle 2' ,val=identifier,color='yellow') }}';"></div>
+                    <a href= "https://drive.google.com/file/d/1FDqnBSeNSI0kuuFDtaS57H6PY6pYmBQg/view?usp=sharing" target="_blank" >
+                        <img src="{{url_for('static', filename='images/marker.jpg')}}" id="marker">
+                    </a>
+                    
+               
+               
+                
                 </div>
 
             </div>
